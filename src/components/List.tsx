@@ -41,7 +41,6 @@ export async function List() {
 		})
 	);
 	const tableString = table.join('\n').toString();
-	console.log(tableString);
 
 	const markdownTable =
 		'| Name                                | Permissions          | Limitations          | Conditions           |\n' +
