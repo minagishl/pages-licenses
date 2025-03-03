@@ -3,11 +3,12 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"fetch-licenses": "tsx scripts/fetchLicenses.ts",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"pages:build": "npx @cloudflare/next-on-pages",
+		"pages:build": "npm run fetch-licenses && @cloudflare/next-on-pages",
 		"pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
 		"pages:watch": "npx @cloudflare/next-on-pages --watch",
 		"pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2023-12-18 --compatibility-flag=nodejs_compat"
@@ -22,7 +23,8 @@
 		"react-dom": "^18",
 		"react-markdown": "^9.0.1",
 		"rehype-raw": "^7.0.0",
-		"remark-gfm": "^4.0.0"
+		"remark-gfm": "^4.0.0",
+		"tsx": "^4.19.3"
 	},
 	"devDependencies": {
 		"@cloudflare/next-on-pages": "1",
